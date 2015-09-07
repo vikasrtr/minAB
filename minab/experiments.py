@@ -1,5 +1,5 @@
 import random
-from datatime import datatime
+from datetime import datetime
 import redis
 
 
@@ -14,7 +14,7 @@ class ABExperiment(object):
 
     """
 
-    def __init__(self, host='localhost', port='6379):
+    def __init__(self, host='localhost', port=6379):
         self._r = redis.StrictRedis(host=host, port=port)
 
     def ab_test(self, name, user, control_value, treatment_value):
@@ -38,7 +38,7 @@ class ABExperiment(object):
 
         return value
 
-    def finished(self, name, user):
+    def finished(self, name, user, value):
         # log finished conversion to redis
-        data = (',').join([name, str(user), str(datatime.now())])
+        data = (',').join([name, str(user), str(datetime.now()), value])
         self._r.rpush('finished_exp', data)

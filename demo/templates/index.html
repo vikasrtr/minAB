@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+	<title>minAB</title>
+
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <style type="text/css">
+    a.custom-link:hover {
+      text-decoration: none
+    }
+    div.jumbotron {
+      background: -webkit-linear-gradient(90deg, #283048 10%, #859398 90%); /* Chrome 10+, Saf5.1+ */
+      background:    -moz-linear-gradient(90deg, #283048 10%, #859398 90%); /* FF3.6+ */
+      background:     -ms-linear-gradient(90deg, #283048 10%, #859398 90%); /* IE10 */
+      background:      -o-linear-gradient(90deg, #283048 10%, #859398 90%); /* Opera 11.10+ */
+      background:         linear-gradient(90deg, #283048 10%, #859398 90%); /* W3C */
+    }
+    .main {
+      background: -webkit-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Chrome 10+, Saf5.1+ */
+      background:    -moz-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* FF3.6+ */
+      background:     -ms-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* IE10 */
+      background:      -o-linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* Opera 11.10+ */
+      background:         linear-gradient(90deg, #ECE9E6 10%, #FFFFFF 90%); /* W3C */
+    }
+    .conv_button_a {
+      background: -webkit-linear-gradient(90deg, #9D50BB 10%, #6E48AA 90%); /* Chrome 10+, Saf5.1+ */
+      background:    -moz-linear-gradient(90deg, #9D50BB 10%, #6E48AA 90%); /* FF3.6+ */
+      background:     -ms-linear-gradient(90deg, #9D50BB 10%, #6E48AA 90%); /* IE10 */
+      background:      -o-linear-gradient(90deg, #9D50BB 10%, #6E48AA 90%); /* Opera 11.10+ */
+      background:         linear-gradient(90deg, #9D50BB 10%, #6E48AA 90%); /* W3C */
+      padding: 20px 38px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffe;
+      line-height: normal;
+      -webkit-border-radius: 12px;
+         -moz-border-radius: 12px;
+              border-radius: 12px        
+    }
+    .conv_button_a:hover {
+      background: -webkit-linear-gradient(90deg, #9D50BB 0%, #6E48AA 100%); /* Chrome 10+, Saf5.1+ */
+      background:    -moz-linear-gradient(90deg, #9D50BB 0%, #6E48AA 100%); /* FF3.6+ */
+      background:     -ms-linear-gradient(90deg, #9D50BB 0%, #6E48AA 100%); /* IE10 */
+      background:      -o-linear-gradient(90deg, #9D50BB 0%, #6E48AA 100%); /* Opera 11.10+ */
+      background:         linear-gradient(90deg, #9D50BB 0%, #6E48AA 100%); /* W3C */
+      color: #ffe;
+    }
+    .conv_button_b {
+
+  background: -webkit-linear-gradient(90deg, #a73737 10%, #7a2828 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #a73737 10%, #7a2828 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #a73737 10%, #7a2828 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #a73737 10%, #7a2828 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #a73737 10%, #7a2828 90%); /* W3C */
+              padding: 20px 38px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffe;
+      line-height: normal;
+      -webkit-border-radius: 12px;
+         -moz-border-radius: 12px;
+              border-radius: 12px        
+    }
+    .conv_button_b:hover {
+
+  background: -webkit-linear-gradient(90deg, #a73737 10%, #7a2828 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #a73737 10%, #7a2828 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #a73737 10%, #7a2828 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #a73737 10%, #7a2828 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #a73737 10%, #7a2828 90%); /* W3C */
+              color: #ffe;
+    }
+
+  </style>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+</head>
+<body class="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="color:#ffe; padding-top:0px;">
+      <div class="container">
+        <a class="custom-link" href="/"><h1 style="color:#ffe; margin-top:25px; margin-bottom:5px">minAB</h1></a>
+        <h3 style="margin-top:4px; margin-bottom:2px">Python A/B testing framework</h3>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-center">Click to record a conversion!</h2>
+          <br/>
+          <form class="form-inline" method="post" action="/">
+            <input type="hidden" name="user_id" value="{{user}}" />
+            <input type="hidden" name="exp_value" value="{{btn_class}}" />
+            <center><button class="btn {{btn_class}}" type="submit">Click Me &raquo;</button></center>
+          </form>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <center><p>&copy; <a href="https://vikasrtr.github.io">Vikas Raturi</a> 2014</p></center>
+      </footer>
+    </div> <!-- /container -->
+</body>
+</html>
