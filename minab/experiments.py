@@ -42,3 +42,9 @@ class ABExperiment(object):
         # log finished conversion to redis
         data = (',').join([name, str(user), str(datetime.now()), value])
         self._r.rpush('finished_exp', data)
+
+    def get_data(self):
+        # fetch all data from redis
+        exp_data = self._r.lrange('experiments', 0, -1)
+        exp_conversions = self._r.lrange('finished_exp', 0, -1)
+        return (exp_data, exp_conversions)

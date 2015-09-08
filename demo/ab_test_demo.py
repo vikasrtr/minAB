@@ -48,6 +48,16 @@ def homepage():
             return sys.exc_info()
 
 
+@app.route('/data', methods=['POST'])
+def data_download():
+    exp = ABExperiment()
+    exp_data, exp_conversion = exp.get_data()
+
+    try:
+        return render_template('data.html', exp_data=exp_data, exp_conversion=exp_conversion)
+    except:
+        return sys.exc_info()
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
